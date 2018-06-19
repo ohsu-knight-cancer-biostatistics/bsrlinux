@@ -8,3 +8,4 @@ Useful files:
 
 - Unix server instructions: [bsrlinux_instructions.txt](bsrlinux_instructions.txt)
 - Managing packages on Rstudio server: [rstudio_server_instructions.R](rstudio_server_instructions.R)
+with rendered version: [rstudio_server_instructions.md](rstudio_server_instructions.md)
