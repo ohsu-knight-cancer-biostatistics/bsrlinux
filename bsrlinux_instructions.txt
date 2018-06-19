@@ -11,7 +11,8 @@
 
 # to transfer files into the server from your computer via a
 # file transfer program such as FileZilla or Cyberduck, use the ssh/sftp protocol to
-# connect to your home folder on exacloud (~/) and transfer files from computer to that folder
+# connect to your home folder on ACC (~/) and transfer files from computer to that folder
+# or, you can transfer files to the bsrlinux server itself (recommended for larger data files) /home/groups/bsrlinux/
 
 
 ####################################################################################
