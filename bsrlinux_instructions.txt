@@ -1,0 +1,59 @@
+####################################################################################
+###### INSTRUCTIONS FOR BSRLINUX SERVER -- KNIGHT BSR
+###### AUTHOR: Jessica Minnier
+###### DATE: June 19, 2018
+####################################################################################
+
+# To access the bsrlinux server you must be inside the ohsu firewall (either on campus or VPN)
+
+# you can access Rstudio server on the website
+# https://bsrlinux.ohsu.edu/rstudio/
+
+# to transfer files into the server from your computer via a
+# file transfer program such as FileZilla or Cyberduck, use the ssh/sftp protocol to
+# connect to your home folder on exacloud (~/) and transfer files from computer to that folder
+
+
+####################################################################################
+###### TRANSFER FILES USING A TERMINAL
+####################################################################################
+
+# you can also transfer files using a terminal window (use a terminal client like Putty on Windows)
+
+# SSH into bsrlinux with USERNAME as your ohsu username:
+
+ssh USERNAME@bsrlinux
+
+# then enter OHSU password
+
+# this puts you in your personal ACC home directory ~/ which only you can access
+# you can see what files are there with (THIS IS NOT THE SERVER, these files are located on ACC’s computers)
+ls
+
+# to CREATE a folder to hold your R packages (only do this once):
+mkdir ~/Rlib
+
+# to view contents of your Rlib
+ls ~/Rlib
+
+# to get to the bsrlinux server directory you can switch to:
+cd /home/groups/bsrlinux/
+# Now you are looking at files on the server
+
+# To make a file read/writeable by our group:
+chmod 775 FILENAME
+
+# To make a folder and all of its contents read/writeable by our group:
+chmod -R 775 FOLDERNAME
+
+# to get back to home directory:
+cd ~/
+
+# to edit your .Rprofile (i.e. to add ~/Rlib to your .libPaths())
+nano ~/.Rprofile
+
+# to transfer files from another server such as nix (MPSSR server), you can ssh into that server,
+# cd to the directory where the data lives on that server, and use rysnc to transfer from
+# the server to bsrlinux, where data_directory is the name of the folder you wish to transfer: 
+rsync -rv data_directory USERNAME@bsrlinux:/home/groups/bsrlinux/YOURFOLDER
+

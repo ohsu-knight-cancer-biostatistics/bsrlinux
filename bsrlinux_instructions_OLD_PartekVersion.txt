@@ -1,0 +1,53 @@
+####################################################################################
+###### INSTRUCTIONS FOR BSRLINUX SERVER -- KNIGHT BSR
+###### AUTHOR: Jessica Minnier
+###### DATE: November 22, 2017
+####################################################################################
+
+# To access the bsrlinux server you must be inside the ohsu firewall (either on campus or VPN)
+
+# you can access Partek on the website
+# http://bsrlinux.ohsu.edu/
+# NOTE: ONLY ONE USER CAN BE RUNNING TASKS AT ONE TIME
+
+# to transfer files into the server from your computer via a
+# file transfer program such as FileZilla or Cyberduck, use the ssh/sftp protocol to
+# connect to bsrlinux and transfer files from computer to bsrlinux
+
+
+####################################################################################
+###### TRANSFER FILES USING A TERMINAL
+####################################################################################
+
+# you can also transfer files using a terminal window (use a terminal client like Putty on Windows)
+
+# SSH into bsrlinux server with USERNAME as your ohsu username:
+
+ssh USERNAME@bsrlinux
+# then enter OHSU password
+
+# this puts you in your personal exacloud home directory ~/ which only you can access
+# you can see what files are there with
+ls
+
+# to get to the bsrlinux server directory you can switch to:
+cd /home/groups/bsrlinux/
+
+# this is where the data files should live
+# when the data is located here, Partek can "find" the 
+# data when you upload it into a project via the software
+# WARNING: only save data in a folder 2-3 folder levels below FlowData
+# or Partek will not be able to find it
+cd /home/groups/bsrlinux/flow/FlowData
+
+# The person who will be running the project should upload the data, or the uploader
+# should change the permissions of the data to allow another user to write/execute/read
+cd FOLDERWITHDATA
+chmod 777 *fastq.gz
+# this works but will make data PUBLIC, we need to fix this so that BSR is a group on here
+
+# to transfer files from another server such as nix (MPSSR server), you can ssh into that server,
+# cd to the directory where the data lives on that server, and use rysnc to transfer from
+# the server to bsrlinux, where data_directory is the name of the folder you wish to transfer: 
+rsync -rv data_directory USERNAME@bsrlinux:/home/groups/bsrlinux/flow/FlowData/
+
