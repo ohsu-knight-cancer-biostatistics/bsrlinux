@@ -25,11 +25,15 @@ lib <- .libPaths()
 lib <- .libPaths()
 .libPaths(c("~/Rlib",lib)) # if you want R to look in your local library first
 
-#' Now, it should be there:
+#' To change your .Rprofile, see [bsrlinux_instructions.txt](bsrlinux_instructions.txt). Or, you can try using the 
+#' usethis package:
+#+ eval=FALSE
+install.packages("usethis",lib="~/Rlib")
+usethis::edit_r_profile() # copy and paste above code into the file that opened, and save
+#' 
+#' Now, it should be there every time you open a new R session:
 #' 
 .libPaths()
-
-#' To change your .Rprofile, see bsrlinux_instructions.txt
 
 #' To install a package, i.e devtools, in your home directory:
 #+ eval=FALSE
@@ -58,9 +62,10 @@ View(ip)
 
 #' # Tips:
 #' 
-#' - use Rstudio projects! Create a project using Rstudio in a folder in your home directory
+#' - Use Rstudio projects! Create a project using Rstudio in a folder in your home directory
 #' and open the project again using the Rstudio open project commands
 #' - Turn off auto-saving RData (Tools -> Global Options -> Save Workspace to .RData on exit = NEVER)
 #' - Restart R Session often
 #' - To add github ssh keys, follow instructions for unix: http://happygitwithr.com/ssh-keys.html
-#' 
+#' - For an intro on how to use exacloud, see Ted Laderas' [Exacloud Tutorial materials](https://github.com/laderast/exacloud_tutorial) and the 
+#' ACC's [Exacloud Guide](https://accdoc.ohsu.edu/exacloud/guide/)
