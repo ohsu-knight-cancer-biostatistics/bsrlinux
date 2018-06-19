@@ -62,5 +62,5 @@ View(ip)
 #' and open the project again using the Rstudio open project commands
 #' - Turn off auto-saving RData (Tools -> Global Options -> Save Workspace to .RData on exit = NEVER)
 #' - Restart R Session often
-#' 
+#' - To add github ssh keys, follow instructions for unix: http://happygitwithr.com/ssh-keys.html
 #' 

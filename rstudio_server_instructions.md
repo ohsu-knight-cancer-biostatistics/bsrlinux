@@ -12,8 +12,7 @@ To see the directories where R looks for packages:
 .libPaths()
 ```
 
-    ## [1] "/Users/minnier/Rlib"                                           
-    ## [2] "/Library/Frameworks/R.framework/Versions/3.5/Resources/library"
+    ## [1] "/Library/Frameworks/R.framework/Versions/3.5/Resources/library"
 
 If your home directory (i.e. /home/users/YOURNAME/Rlib) is not included in this output, you either should
 
@@ -38,8 +37,8 @@ Now, it should be there:
 .libPaths()
 ```
 
-    ## [1] "/Users/minnier/Rlib"                                           
-    ## [2] "/Library/Frameworks/R.framework/Versions/3.5/Resources/library"
+    ## [1] "/Library/Frameworks/R.framework/Versions/3.5/Resources/library"
+    ## [2] "/Users/minnier/Rlib"
 
 To change your .Rprofile, see bsrlinux\_instructions.txt To install a package, i.e devtools, in your home directory:
 
@@ -82,3 +81,4 @@ Tips:
 -   use Rstudio projects! Create a project using Rstudio in a folder in your home directory and open the project again using the Rstudio open project commands
 -   Turn off auto-saving RData (Tools -&gt; Global Options -&gt; Save Workspace to .RData on exit = NEVER)
 -   Restart R Session often
+-   To add github ssh keys, follow instructions for unix: <http://happygitwithr.com/ssh-keys.html>
